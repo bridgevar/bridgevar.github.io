@@ -57,7 +57,7 @@
        <script>
          var projects;
          
-         function add(project1, project2) {
+         function add(project1, project2, bridgeType) {
             var table = document.getElementById("myTable");
             var p2;
             var p1;
@@ -70,7 +70,7 @@
               cell1.innerHTML = "<center><img src='https://cdn2.scratch.mit.edu/get_image/project/"+project1+"_100x80.png'><br><h4>"+p1+"</h4></center>";
               
             });
-            cell2.innerHTML ="<h1>⟷</h1>"
+            cell2.innerHTML = (bridgeType)?"<h1 title='One-way bridge'>→</h1>"":"<h1 title='Two-way bridge'>⟷</h1>"
             $.getJSON( "https://scratch.mit.edu/api/v1/project/"+project2, function( data ) {
               p2=data.title;
               cell3.innerHTML = "<center><img src='https://cdn2.scratch.mit.edu/get_image/project/"+project2+"_100x80.png'><br><h4>"+p2+"</h4></center>";
@@ -83,7 +83,7 @@
         $.getJSON( "https://raw.githubusercontent.com/bridgevar/bridgevar-js/master/users.json", function( data ) {
           projects=data.users;
           for (i in projects) {
-           add(projects[i].firstProjectId,projects[i].secondProjectId);
+           add(projects[i].firstProjectId,projects[i].secondProjectId, projects[i].oneway);
         }
         });
           
