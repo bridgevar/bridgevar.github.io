@@ -68,6 +68,7 @@
             $.getJSON( "https://scratch.mit.edu/api/v1/project/"+project1, function( data ) {
               console.log(data.title)
               p1=data.title;
+              console.log(p1)
             });
             cell1.innerHTML = "<img src='https://cdn2.scratch.mit.edu/get_image/project/"+project1+"_100x80.png'><br><h3>"+p1+"</h3>";
             cell2.innerHTML ="<h1>⟷</h1>"
