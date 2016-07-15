@@ -56,10 +56,7 @@
        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
        <script>
          var projects;
-        $.getJSON( "https://raw.githubusercontent.com/bridgevar/bridgevar-js/master/users.json", function( data ) {
-          projects=data.users;
-        });
-          function add(project1, project2) {
+         function add(project1, project2) {
             var table = document.getElementById("myTable");
             var row = table.insertRow(0);
             var cell1 = row.insertCell(0);
@@ -69,9 +66,14 @@
             cell2.innerHTML ="<h1>⟷</h1>"
             cell3.innerHTML = "<img src='https://cdn2.scratch.mit.edu/get_image/project/"+project2+"_100x80.png'>";
          }
-         for (i in projects) {
+         
+        $.getJSON( "https://raw.githubusercontent.com/bridgevar/bridgevar-js/master/users.json", function( data ) {
+          projects=data.users;
+          for (i in projects) {
            add(projects[i].firstProjectId,projects[i].secondProjectId);
         }
+        });
+          
        </script>
     </body>
   </html>
