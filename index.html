@@ -67,13 +67,13 @@
             var cell3 = row.insertCell(2);
             $.getJSON( "https://scratch.mit.edu/api/v1/project/"+project1, function( data ) {
               p1=data.title;
-              cell1.innerHTML = "<img src='https://cdn2.scratch.mit.edu/get_image/project/"+project1+"_100x80.png'><br><h3>"+p1+"</h3>";
+              cell1.innerHTML = "<center><img src='https://cdn2.scratch.mit.edu/get_image/project/"+project1+"_100x80.png'><br><h3>"+p1+"</h3></center>";
               
             });
             cell2.innerHTML ="<h1>⟷</h1>"
             $.getJSON( "https://scratch.mit.edu/api/v1/project/"+project2, function( data ) {
               p2=data.title;
-              cell3.innerHTML = "<img src='https://cdn2.scratch.mit.edu/get_image/project/"+project2+"_100x80.png'><br><h3>"+p2+"</h3>";
+              cell3.innerHTML = "<center><img src='https://cdn2.scratch.mit.edu/get_image/project/"+project2+"_100x80.png'><br><h3>"+p2+"</h3></center>";
               
             });
             
