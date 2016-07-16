@@ -43,7 +43,7 @@
          <div class="divider" id="Bridges"></div>
          <div class="container">
             <center>
-              <h2>Currently Active Bridges</h2>
+              <h2>Currently Active Bridges<sub id="serverActive"><span style='color:orange'>Checking if there are any servers online...</span></sub></h2>
             </center>
           <table id="myTable" class="bordered striped">
           </table>
@@ -78,7 +78,11 @@
             });
             
             
-         }
+         }        
+         $.getJSON( "https://scratch.mit.edu/varserver/115628457", function( data ) {
+         document.getElementById("serverActive").innerHTML = (data.variables.map(function(inp){return ((new Date().valueOf - inp.value) < 60000);}).indexOf(true)!=-1)?"<span style='color:green'>There are active servers</span>":"<span style='color:red'>There are no active servers</span>"; //As you can tell, I am a fan of one-liners :P
+        });
+         
          
         $.getJSON( "https://raw.githubusercontent.com/bridgevar/bridgevar-js/master/users.json", function( data ) {
           projects=data.users;
