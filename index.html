@@ -12,10 +12,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <style>
         .lightblue{
-          background-color:#10EBEB;
+          background-color: #10EBEB;
         }
         #serverActive{
           font-size: 25px;
+        }
+        .inline{
+          display: inline;
         }
       </style>
       <!--Add website icon (favicon)-->
@@ -45,7 +48,7 @@
          <div class="divider" id="Bridges"></div>
          <div class="container">
             <center>
-              <h2>Currently Active Bridges</h2><span id="serverActive"><span style='color:orange'>Checking if there are any servers online...</span></span>
+              <h2 class="inline">Currently Active Bridges</h2><br/><span id="serverActive"><span style='color:orange'>Checking if there are any servers online...</span></span>
             </center>
           <table id="myTable" class="bordered striped">
           </table>
