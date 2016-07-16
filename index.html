@@ -74,13 +74,13 @@
             var cell3 = row.insertCell(2);
             $.getJSON( "https://scratch.mit.edu/api/v1/project/"+project1, function( data ) {
               p1=data.title;
-              cell1.innerHTML = "<a href='https://scratch.mit.edu/projects/"+project1+"'><center><img src='https://cdn2.scratch.mit.edu/get_image/project/"+project1+"_100x80.png'><br><h4>"+p1+"</h4></center></a>";
+              cell1.innerHTML = "<a href='https://scratch.mit.edu/projects/"+project1+"' title='Open this project in Scratch by clicking'><center><img src='https://cdn2.scratch.mit.edu/get_image/project/"+project1+"_100x80.png'><br><h4>"+p1+"</h4></center></a>";
               
             });
             cell2.innerHTML = (bridgeType)?"<h1 title='One-way bridge'>→</h1>":"<h1 title='Two-way bridge'>⟷</h1>"
             $.getJSON( "https://scratch.mit.edu/api/v1/project/"+project2, function( data ) {
               p2=data.title;
-              cell3.innerHTML = "<a href='https://scratch.mit.edu/projects/"+project2+"'><center><img src='https://cdn2.scratch.mit.edu/get_image/project/"+project2+"_100x80.png'><br><h4>"+p2+"</h4></center></a>";
+              cell3.innerHTML = "<a href='https://scratch.mit.edu/projects/"+project2+" title='Open this project in Scratch by clicking'><center><img src='https://cdn2.scratch.mit.edu/get_image/project/"+project2+"_100x80.png'><br><h4>"+p2+"</h4></center></a>";
               
             });
             
