@@ -86,8 +86,8 @@
          }        
          var xhttp = new XMLHttpRequest();
          xhttp.open("GET", "https://crossorigin.me/https://scratch.mit.edu/varserver/115628457", true);
-         xhttp.onreadystatechange = function( data ) { if(xhttp.readyState==4) { 
-         if(xhttp.status==200){document.getElementById("serverActive").innerHTML = (data.variables.map(function(inp){return ((new Date().getTime() - inp.value) < 60000);}).indexOf(true)!=-1)?"<span style='color:green'>There are active servers</span>":"<span style='color:red'>There are no active servers</span>"; /*As you can tell, I am a fan of one-liners :P */} else {document.getElementById("serverActive").innerHTML ="Unable to get server status due to a " + xhttp.status + " " + xhttp.statusText + " error. Try reloading the page?"}
+         xhttp.onreadystatechange = function() { if(xhttp.readyState==4) { 
+         if(xhttp.status==200){document.getElementById("serverActive").innerHTML = (JSON.parse(xhttp.responseText).variables.map(function(inp){return ((new Date().getTime() - inp.value) < 60000);}).indexOf(true)!=-1)?"<span style='color:green'>There are active servers</span>":"<span style='color:red'>There are no active servers</span>"; /*As you can tell, I am a fan of one-liners :P */} else {document.getElementById("serverActive").innerHTML ="Unable to get server status due to a " + xhttp.status + " " + xhttp.statusText + " error. Try reloading the page?"}
         }};
          xhttp.send();
          
